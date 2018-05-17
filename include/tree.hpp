@@ -9,6 +9,7 @@ struct Node {
     Node* right = nullptr;
 };
 
+    
 enum class traversal_order {pre, in, post};
 
 class Tree {
