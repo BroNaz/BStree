@@ -8,9 +8,9 @@
 
 TEST_CASE("Creating tree") {
     BSTree::Tree tree;
-    REQUIRE(tree.emptiness() == false);
+    REQUIRE(tree.emptiness() == true);
     BSTree::Tree tree_{1};
-    REQUIRE(tree_.emptiness() == true);
+    REQUIRE(tree_.emptiness() == false);
 }
 
 TEST_CASE("Printing of tree by various traversal order") {
