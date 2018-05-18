@@ -33,7 +33,8 @@ auto BSTree::Tree::operator=(const BSTree::Tree& tree) -> Tree& {
 
 bool BSTree::Tree::insert(int value) {
     if (root == nullptr) {
-        root = new Node {value};
+        root = new Node; // Node(value)
+        root->data = value;
         return true;
     } else {
         if (exists(value)) {
@@ -43,14 +44,16 @@ bool BSTree::Tree::insert(int value) {
         while (node != nullptr) {
             if(node->data > value) {
                 if(node->left == nullptr) {
-                    node ->left = new Node{value};
+                    node ->left = new Node;
+                      node ->left->data = value  ;
                     return true;
                 }
                 node = node->left ;
             }
             if(node->data < value) {
                 if(node->right == nullptr) {
-                    node ->right = new Node{value};
+                    node ->right = new Node;
+                     node->right->data = value  ;
                     return true;
                 }
                 node = node->right ;
@@ -333,4 +336,3 @@ bool BSTree::Tree::load(const std::string& path) {
     }
     return true ;
 }
-
