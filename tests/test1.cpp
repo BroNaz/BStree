@@ -8,9 +8,9 @@
 
 TEST_CASE("Creating tree") {
     BSTree::Tree tree;
-    REQUIRE(tree.empty() == false);
+    REQUIRE(tree.emptiness() == false);
     BSTree::Tree tree_{1};
-    REQUIRE(tree_.empty() == true);
+    REQUIRE(tree_.emptiness() == true);
 }
 
 TEST_CASE("Printing of tree by various traversal order") {
@@ -42,12 +42,12 @@ TEST_CASE("Printing of tree by various traversal order") {
     REQUIRE(post == result_post);
 }
 
-TEST_CASE("Addig node") {
+TEST_CASE("insertig node") {
     BSTree::Tree tree = { 25, 34, 12, 4, 7, 67, 78, 9, 0 };
 
-    tree.add(1);
-    tree.add(20);
-    tree.add(5);
+    tree.insert(1);
+    tree.insert(20);
+    tree.insert(5);
 
 
     std::string str;
@@ -56,10 +56,10 @@ TEST_CASE("Addig node") {
     tree.print_order(out, BSTree::traversal_order::pre);
 
     std::string result = "25  12  4  0  1  7  5  9  20  34  67  78  ";
-    std::string result_of_adding;
-    getline(out, result_of_adding);
+    std::string result_of_inserting;
+    getline(out, result_of_inserting);
 
-    REQUIRE(result== result_of_adding);
+    REQUIRE(result== result_of_inserting);
 }
 
 TEST_CASE("Deleting node") {
@@ -99,8 +99,8 @@ TEST_CASE("Input in file") {
 
 TEST_CASE("Existence of node") {
     BSTree::Tree tree = { 8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15 };
-    REQUIRE(tree.search(8) == true);
-    REQUIRE(tree.search(100) == false);
+    REQUIRE(tree.exists(8) == true);
+    REQUIRE(tree.exists(100) == false);
 }
 
 TEST_CASE("Saving in and loading from file"){
