@@ -138,7 +138,7 @@ std::stringstream out(buffer);
 
 out << tree;
 
-std::string result = "1  2  3 ";
+std::string result = "1  2  3  ";
 std::string res;
 getline(out, res);
 REQUIRE(res == result);
