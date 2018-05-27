@@ -25,7 +25,6 @@ BSTree::Tree::Tree(const Tree& tree) {
 }
 
 auto BSTree::Tree::operator=(const BSTree::Tree& tree) -> Tree& {
-    destructor(root);
     Tree tmp{tree};
     this->swap(tmp);
     return *this;
