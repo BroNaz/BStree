@@ -127,3 +127,19 @@ TEST_CASE("Saving in and loading from file"){
 
     REQUIRE(result == text);
 }
+TEST_CASE("Asigment of tree"){
+BSTree::Tree tree {1, 2, 3, 4};
+BSTree::Tree tree1 {1, 2, 3};
+
+tree = tree1;
+
+std::string buffer;
+std::stringstream out(buffer);
+
+out « tree;
+
+std::string result = "1 2 3 ";
+std::string res;
+getline(out, res);
+REQUIRE(res == result);
+}
