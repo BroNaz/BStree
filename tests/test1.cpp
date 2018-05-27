@@ -136,7 +136,7 @@ tree = tree1;
 std::string buffer;
 std::stringstream out(buffer);
 
-out « tree;
+out << tree;
 
 std::string result = "1 2 3 ";
 std::string res;
