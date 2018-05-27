@@ -140,6 +140,6 @@ out << tree;
 
 std::string result = "1 2 3 ";
 std::string res;
-getline(res, out);
+getline(out, res);
 REQUIRE(res == result);
 }
